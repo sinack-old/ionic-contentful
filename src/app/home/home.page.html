@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Contentful Data
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card *ngFor="let product of products">
+    <ion-img [src]="product.fields.image[0].fields.file.url"></ion-img>
+    <ion-card-header>
+      <ion-card-title>{{ product.fields.productName }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button routerLink="/details/{{ product.sys.id }}">Details</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

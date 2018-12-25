@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card *ngIf="product">
+      <ion-img [src]="product.fields.image[0].fields.file.url"></ion-img>
+      <ion-card-header>
+        <ion-card-title>{{ product.fields.productName }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Price: ${{ product.fields.price }}</p>
+        <p>Size: {{ product.fields.sizetypecolor }}</p>
+        <p>{{ product.fields.productDescription }}</p>
+      </ion-card-content>
+    </ion-card>
+    <ion-button target="_blank" (click)="goBack()">Back</ion-button>
+</ion-content>
